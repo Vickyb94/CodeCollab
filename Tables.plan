@@ -1,0 +1,21 @@
+First table
+userId
+userEmail
+userPassword
+
+second table 
+languages
+user_Id
+language_1
+language_2
+language_3
+language_4
+language_5
+
+
+third table
+postId
+postingUser
+language
+content 
+imageLink
