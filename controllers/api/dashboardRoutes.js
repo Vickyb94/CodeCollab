@@ -2,8 +2,8 @@
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
-  const dashboardData = await db.query("SELECT * FROM dashboard")
-  res.json(dashboardData);
+  const posts = await db.query("SELECT * FROM posts")
+  res.json(posts);
 });
 
 // router.post('/', async (req, res) => {
