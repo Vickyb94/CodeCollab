@@ -34,18 +34,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 app.use(session(sess));
 
-const db = mysql.createConnection(
-   
-    {
-      host: '127.0.0.1',
-      // MySQL Username
-      user: process.env.DB_USER,
-      // TODO: Add MySQL Password
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-    },
-);
-
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening at http://localhost:${PORT}`));
 });
