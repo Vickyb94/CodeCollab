@@ -3,11 +3,10 @@ const { Language } = require('../models');
 
 const languageData = [
     {
-        userId: 1,
         JavaScript: true,
         Python: false,
         Java: false,
-        Swift: false
+        Swift: false,
     }
 ]
 

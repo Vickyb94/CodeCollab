@@ -13,6 +13,7 @@ const seed = async () => {
   await seedPosts();
   await seedLanguages();
   console.log('Database seeded!');
+  process.exit(0);
 }
 
 // run the function to seed all data

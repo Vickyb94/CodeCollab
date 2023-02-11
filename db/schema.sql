@@ -7,7 +7,7 @@ CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   userName VARCHAR(30) NOT NULL,
   userEmail VARCHAR(30) NOT NULL,
-  userPassword VARCHAR(30) NOT NULL,
+  userPassword VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE languages (
@@ -15,8 +15,7 @@ CREATE TABLE languages (
   JavaScript BOOLEAN NOT NULL,
   Python BOOLEAN NOT NULL,
   Java BOOLEAN NOT NULL,
-  Swift BOOLEAN NOT NULL,
-  FOREIGN KEY (userId) REFERENCES users(id)
+  Swift BOOLEAN NOT NULL
 );
 
 CREATE TABLE posts (

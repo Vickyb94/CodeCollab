@@ -8,7 +8,7 @@ class Language extends Model {}
 
 Language.init(
   {
-    id:{
+    id: {
       type:DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -29,13 +29,6 @@ Language.init(
     Swift: {
       type: DataTypes.BOOLEAN,
       defaultValue:false
-    },
-    userId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: User,
-        key: 'id',
-      },
     },
   },
   {

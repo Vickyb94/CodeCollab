@@ -5,7 +5,7 @@ const postData = [
     {
         content: "Example content here.",
         imageLink: "https://res.cloudinary.com/dbzzfnp6n/image/upload/v1675990496/city-wallpaper_cnzndh.jpg",
-        postUser_id: 1
+        userId: 1
     }
 ]
 
