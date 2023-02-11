@@ -8,7 +8,7 @@ CREATE TABLE user (
   userName VARCHAR(30) NOT NULL,
   userEmail VARCHAR(30) NOT NULL,
   userPassword VARCHAR(30) NOT NULL,
-  PRIMARY KEY (userId)
+  PRIMARY KEY (userId)  ON DELETE CASCADE
 );
 
 CREATE TABLE languages (
@@ -22,9 +22,8 @@ CREATE TABLE languages (
 
 CREATE TABLE posts (
  postId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- content VARCHAR(30) NOT NULL,
- imageLink VARCHAR(30) NOT NULL,
+ content VARCHAR(100) NOT NULL,
+ imageLink VARCHAR(150),
  postUser_id INT,
  FOREIGN KEY (postUser_id) REFERENCES user(userId)
 );
-

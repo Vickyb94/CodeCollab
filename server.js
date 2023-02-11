@@ -15,6 +15,15 @@ const loggedIn = require('./utils/loggedIn');
 // gives handlebars access to loggedIn function
 const handlebars = expHandlebars.create({ loggedIn });
 
+// cloudinary API
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+  cloud_name: 'dbzzfnp6n',
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  secure: true
+});
+
 // create a session
 const sess = {
   secret: 'secret',

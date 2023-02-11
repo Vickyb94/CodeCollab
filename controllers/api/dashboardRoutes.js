@@ -1,9 +1,24 @@
 
 const router = require('express').Router();
+const { Post } = require('../../models')
 
 router.get('/', async (req, res) => {
-  await res.render('dashboard', {
-    
+
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: Post,
+        attributes: ['content', 'imageLink', 'postUser_id']
+      }
+    ]
+  });
+
+  const allPosts = postData.map((post) => {
+    post.get({ plain: true });
+  })
+
+  res.render('dashboard', {
+    allPosts
   });
 });
 
