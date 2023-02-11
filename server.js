@@ -3,7 +3,6 @@ const session = require('express-session');
 const expHandlebars = require('express-handlebars');
 const routes = require('./controllers');
 require('dotenv').config();
-const mysql = require('mysql2');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
