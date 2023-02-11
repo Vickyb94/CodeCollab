@@ -1,42 +1,50 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Languages extends Model {}
+// import User for reference
+const User = require('./User');
 
-Languages.init(
+class Language extends Model {}
+
+Language.init(
   {
-    user_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'user',
-          key: 'userId',
-        },
-      },
+    id:{
+      type:DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     Javascript: {
-        type: DataTypes.BOOLEAN,
-        defaultValue:false
+      type: DataTypes.BOOLEAN,
+      defaultValue:false
     },
     Python: {
-        type: DataTypes.BOOLEAN,
-        defaultValue:false
+      type: DataTypes.BOOLEAN,
+      defaultValue:false
     },
     Java: {
-        type: DataTypes.BOOLEAN,
-        defaultValue:false
+      type: DataTypes.BOOLEAN,
+      defaultValue:false
     },
     Swift: {
-        type: DataTypes.BOOLEAN,
-        defaultValue:false
+      type: DataTypes.BOOLEAN,
+      defaultValue:false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: 'id',
+      },
     },
   },
-
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName:`Languages`,
+    modelName:`Language`,
   }
 );
 
-module.exports = Languages;
+module.exports = Language;
