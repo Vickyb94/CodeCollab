@@ -10,16 +10,25 @@
 <body>
   <header>
     {{!-- Put logo up here somewhere --}}
+    <!--<a href="/"><img src="" alt=""></a>-->
     <h1>CodeCollab</h1> 
+  
+    <nav class="navbar">
+       <div class="right"></div>
+          {{!-- Navbar to display options --}}
+            <p>Dashboard</p>
+            <p>Login</p>
+            <p>Sign-up</p>
+       </div>
+    </nav>
+
   </header>
-  <nav>
-    {{!-- Navbar to display options --}}
-    <p>Dashboard</p>
-    <p>Login</p>
-    <p>Sign-up</p>
-  </nav>
   <main>
     {{{body}}}
   </main>
+
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
