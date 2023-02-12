@@ -21,12 +21,11 @@
             <p>Sign-up</p>
        </div>
     </nav>
-
   </header>
   <main>
     {{{body}}}
   </main>
-
+ <!--Render logout if user is already logged in-->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
