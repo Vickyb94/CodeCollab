@@ -1,16 +1,16 @@
 
-DROP DATABASE IF EXISTS db_codeCollab;
-CREATE DATABASE db_codeCollab;
-USE db_codeCollab;
+DROP DATABASE IF EXISTS codeCollab_db;
+CREATE DATABASE codeCollab_db;
+USE codeCollab_db;
 
-CREATE TABLE users (
+CREATE TABLE user (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   userName VARCHAR(30) NOT NULL,
   userEmail VARCHAR(30) NOT NULL,
   userPassword VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE languages (
+CREATE TABLE language (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   JavaScript BOOLEAN NOT NULL,
   Python BOOLEAN NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE languages (
   Swift BOOLEAN NOT NULL
 );
 
-CREATE TABLE posts (
+CREATE TABLE post (
  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
  content VARCHAR(100) NOT NULL,
  imageLink VARCHAR(150),
