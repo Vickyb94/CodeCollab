@@ -1,8 +1,14 @@
-const user = require('./user');
-const languages = require('./languages');
-const post = require('./post');
+const User = require('./User');
+const Language = require('./Language');
+const Post = require('./Post');
 
+// associations 
+User.hasMany(Post, {
+  foreignKey: 'userId'
+})
 
+Post.belongsTo(User, {
+  foreignKey: 'userId'
+})
 
-
-module.exports = { user, languages, post };
+module.exports = { User, Language, Post };

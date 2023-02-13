@@ -3,28 +3,24 @@ DROP DATABASE IF EXISTS db_codeCollab;
 CREATE DATABASE db_codeCollab;
 USE db_codeCollab;
 
-CREATE TABLE user (
-  userId INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   userName VARCHAR(30) NOT NULL,
   userEmail VARCHAR(30) NOT NULL,
-  userPassword VARCHAR(30) NOT NULL,
-  PRIMARY KEY (userId)
+  userPassword VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE languages (
-  userID INT NOT NULL,
-  JavaScript INT,
-  Python INT,
-  Java INT,
-  Swift INT,
-  FOREIGN KEY (userId) REFERENCES user(userId)
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  JavaScript BOOLEAN NOT NULL,
+  Python BOOLEAN NOT NULL,
+  Java BOOLEAN NOT NULL,
+  Swift BOOLEAN NOT NULL
 );
 
 CREATE TABLE posts (
- postId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
- content VARCHAR(30) NOT NULL,
- imageLink VARCHAR(30) NOT NULL,
- postUser_id INT,
- FOREIGN KEY (postUser_id) REFERENCES user(userId)
+ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ content VARCHAR(100) NOT NULL,
+ imageLink VARCHAR(150),
+ FOREIGN KEY (userId) REFERENCES users(id)
 );
-

@@ -3,7 +3,6 @@ const session = require('express-session');
 const expHandlebars = require('express-handlebars');
 const routes = require('./controllers');
 require('dotenv').config();
-const mysql = require('mysql2');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -14,6 +13,15 @@ const PORT = process.env.PORT || 3001;
 const loggedIn = require('./utils/loggedIn');
 // gives handlebars access to loggedIn function
 const handlebars = expHandlebars.create({ loggedIn });
+
+// cloudinary API
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+  cloud_name: 'dbzzfnp6n',
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  secure: true
+});
 
 // create a session
 const sess = {
