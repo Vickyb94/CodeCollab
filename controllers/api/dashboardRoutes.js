@@ -9,14 +9,13 @@ router.get('/', async (req, res) => {
     include: [
       {
         model: User,
+        attributes: ['userName']
       }
     ]
   });
 
   // put postData into an array
-  const allPosts = postData.map((post) => {
-    post.get({ plain: true });
-  })
+  const allPosts = postData.map((post) => post.get({ plain: true }));
 
   res.render('dashboard', {
     allPosts
