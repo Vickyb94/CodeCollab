@@ -30,6 +30,13 @@ Language.init(
       type: DataTypes.BOOLEAN,
       defaultValue:false
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: 'id'
+      },
+    },  
   },
   {
     sequelize,
