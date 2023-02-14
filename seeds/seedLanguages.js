@@ -11,7 +11,8 @@ const languageData = [
 ]
 
 const seedLanguages = () => {
-    Language.bulkCreate(languageData);
+  return Language.bulkCreate(languageData);
+   
 }
 
 module.exports = seedLanguages;

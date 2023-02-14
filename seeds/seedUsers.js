@@ -10,7 +10,7 @@ const userData = [
 ]
 
 const seedUsers = () => {
-    User.bulkCreate(userData);
-}
+    return User.bulkCreate(userData);
+    }
 
 module.exports = seedUsers;
