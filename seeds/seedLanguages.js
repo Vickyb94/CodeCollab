@@ -10,6 +10,9 @@ const languageData = [
     }
 ]
 
-const seedLanguages = () => Language.bulkCreate(languageData);
+const seedLanguages = () => {
+  return Language.bulkCreate(languageData);
+   
+}
 
 module.exports = seedLanguages;

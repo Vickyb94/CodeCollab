@@ -35,6 +35,7 @@ Language.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    underscored: false,
     modelName:`Language`,
   }
 );
