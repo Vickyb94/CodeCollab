@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    // check to see if login credentials match the ones saved in the session
+    // check to see if login credentials match the ones saved in the database
     const userLogin = await User.findOne({
       where: {
         userName: req.body.userName,
@@ -23,19 +23,18 @@ router.post('/', async (req, res) => {
       res.status(400).json('Incorrect Email or Password, please try again.');
       return;
     } else {
-      // if everything matches up with the session
+      // if everything matches up with the database
       req.session.save(() => {
-      // set the loggedIn status of the user to true
+      // set the loggedIn session status of the user to true
       req.session.loggedIn = true;
     })
 
-    // tell the user they have succefully logged in
+    // tell the user they have successfully logged in
     res.status(200).json(`Welcome back ${userLogin.userName}!`);
     }
   } catch (err) {
     res.status(400).json(err);
   }
-  
 })
 
 module.exports = router;

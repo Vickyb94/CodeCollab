@@ -29,11 +29,12 @@
   <footer>
       <div>
          <!-- Render login and logout links if conditions permit -->
-         {{#if loggedin}}
+        {{#if loggedin}}
         <a href="/dashboard">dashboard</a>
         <button class="no-button" id="logout">Logout</button>
         {{else}}
         <a href="/login">Login</a>
+        {{/if}}
       </div>
   </footer>
  <!--Render logout if user is already logged in-->
