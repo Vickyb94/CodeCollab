@@ -36,6 +36,7 @@ router.post('/', loggedIn, async (req, res) => {
   }
 });
 
+
 module.exports = router;
 
 // example of functional cloudinary image upload
