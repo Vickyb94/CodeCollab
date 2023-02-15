@@ -26,7 +26,9 @@ router.post('/', async (req, res) => {
       // if everything matches up with the database
       req.session.save(() => {
       // set the loggedIn session status of the user to true
+      
       req.session.loggedIn = true;
+      req.session.id = userLogin.id;
     })
 
     // tell the user they have successfully logged in

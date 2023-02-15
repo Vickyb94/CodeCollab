@@ -13,7 +13,7 @@ console.log("Running code");
             });
             console.log(response);
             if (response.ok) {
-               document.location.replace('/dashboard');
+               document.location.replace('/api/dashboard');
             }
                 else {
                 alert('Sign up Failed! Please try again');

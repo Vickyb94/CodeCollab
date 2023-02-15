@@ -13,7 +13,7 @@ console.log("Running username/password");
         });
         //redirect browser to dashboard
         if (response.ok) {
-          document.location.replace('/dashboard');
+          document.location.replace('/api/dashboard');
         }
           else {
           alert('Login Failed! Please try again');
