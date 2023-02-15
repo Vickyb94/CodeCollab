@@ -8,13 +8,13 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+  console.log(req.body);
   try {
     // check to see if login credentials match the ones saved in the database
     const userLogin = await User.findOne({
       where: {
-        userName: req.body.userName,
-        userEmail: req.body.userEmail,
-        userPassword: req.body.userPassword
+        userEmail: req.body.username,
+        userPassword: req.body.password
       }
     })
 
