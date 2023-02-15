@@ -19,6 +19,7 @@
     "express-session": "^1.17.3",
     "handlebars-error-parser": "^1.0.9",
     "mysql2": "^3.1.1",
+    "nodemon": "^2.0.20",
     "sequelize": "^6.28.0"
   }
 }
