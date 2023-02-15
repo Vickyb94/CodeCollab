@@ -1,6 +1,6 @@
 const { User }= require(`../../models`);
 const router = require('express').Router();
-
+const loggedIn = require('../../utils/loggedIn');
 router.get('/', async (req, res) => {
   await res.render('signup', {
     
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
     });
     req.session.save(() => {
       // sets logged_in session status to true
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       // adds the new users id to session
       req.session.id = newUser.id;
       console.log("Created new user");

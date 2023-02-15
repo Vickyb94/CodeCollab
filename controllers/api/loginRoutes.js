@@ -1,4 +1,4 @@
-
+const loggedIn = require('../../utils/loggedIn');
 const cloudinary = require('cloudinary').v2;
 const router = require('express').Router();
 const { Post, User, Language } = require('../../models')
@@ -29,9 +29,11 @@ router.post('/', async (req, res) => {
       
       req.session.loggedIn = true;
       req.session.id = userLogin.id;
+     
     })
 
     // tell the user they have successfully logged in
+    
     res.status(200).json(`Welcome back ${userLogin.userName}!`);
     }
   } catch (err) {
