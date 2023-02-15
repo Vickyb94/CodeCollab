@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
       content: req.body.content,
       // imageLink: cloudinary.image(req.body.imageLink)
       imageLink: req.body.imageLink,
-      userId: Post.userId
+      userId: req.session.id
     })
     console.log(newPost)
     res.status(200).json(newPost);

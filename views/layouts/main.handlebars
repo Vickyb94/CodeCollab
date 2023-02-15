@@ -5,26 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeCollab</title>
-  <link rel="stylesheet" href="/css/style.css"> 
-  </head>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
 <body>
   <header>
     {{!-- Put logo up here somewhere --}}
     <!--<a href="/"><img src="" alt=""></a>-->
-    <h1>CodeCollab</h1> 
-  
-    <nav class="navbar">
-       <div class="right"></div>
-          {{!-- Navbar to display options --}}
-            <p><a href="/dashboard">Dashboard</a></p>
-            <p><a href="/signup">Sign-up</a></p>
-{{#if session.loggedIn}}       
- Logout
- {{else}}
- <a href="/login">Log In</a>
- {{/if}}
-       </div>
-    </nav>
+    <div class="hero">
+        <nav>
+            <h1>CodeCollab</h1> 
+              <ul>
+                  {{!-- Navbar to display options --}}
+               <li><a href="/dashboard">Dashboard</a></li>
+               <li><a href="/signup">Sign-up</a></li>
+              </ul> 
+        </nav>
+    </div>
   </header>
   <main>
     {{{body}}}
