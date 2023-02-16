@@ -6,6 +6,12 @@
     box-sizing: border-box;
 }
 
+/*.logo {
+    text-indent: -999999px;
+    background: url('image/logo.png');
+
+}*/
+
 body {
     height: 100vh;
     width: 100%;
@@ -76,6 +82,20 @@ input {
   padding: 50px 60px 70px;
   text-align: center;
   border-radius: 20px;
+}
+
+.postBtn {
+    background-color:black;
+    color: #ecac62;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    font-size: 100%;
+    padding: 10px 25px;
+    border-radius: 15px;
+    transition: transform .4s;
+    margin-top: 10%;
+    margin-left: 45%;
 }
 
 .btn {
