@@ -1,10 +1,12 @@
 <div class="page">
     <div class="content">
+        <h2>Username:</h2>
+        <h3>Email:</h3>
         {{!-- <div class="image"><img src="{{image source}}"></div> --}}
              {{#each allPosts as |post|}}
              <p>{{post.content}}</p>
              {{/each}}
-             {{#each allUser as |user|}}
+             {{#each User as |username|}}
              <p>{{username}}</p>
              {{/each}}
            

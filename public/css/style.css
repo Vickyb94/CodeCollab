@@ -28,6 +28,15 @@ h1 {
 
 }
 
+/*p {
+    font-size: 250%;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: Left; 
+    background: #e2d3c1;
+    margin-top: 5%;
+}*/
+
 nav{
     display: flex;
     align-items: center;
