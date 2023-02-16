@@ -5,14 +5,7 @@ const loggedIn = require('../../utils/loggedIn');
 
 router.get('/', async (req, res) => {
 
-  const postData = await Post.findAll({
-    include: [
-      {
-        model: User,
-        attributes: ['userName']
-      }
-    ]
-  });
+  const postData = await Post.findByPk(1, { include: User }).then(post => console.log(post.user.userName))
 
   // put postData into an array
   const allPosts = postData.map((post) => post.get({ plain: true }));
