@@ -13,7 +13,7 @@ console.log("Running code");
             });
             console.log(response);
             if (response.ok) {
-               document.location.replace('/api/dashboard');
+               document.location.replace('/dashboard');
             }
                 else {
                 alert('Sign up Failed! Please try again');
@@ -22,7 +22,7 @@ console.log("Running code");
 };
 
 document
-  .querySelector('#signupbtn')
+  .querySelector('#signup-btn')
   .addEventListener('click', signupFormHandler);
 
 
