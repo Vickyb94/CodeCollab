@@ -1,9 +1,10 @@
-
-<div class="form-group">
-      <button class="postBtn" onclick="postButton()">Add a post</button>
+<div id="postButtonDiv" style="display: flex">
+    <button id="postBtn">Add a post</button>
 </div>
 
 <form id="postForm" style="display: none">
+    <input type="text" placeholder="Give us your code!" id="content" name="post content" required>
+    <input type="text" placeholder="Upload a picture!" id="picture" name="post picture">
 </form>
 
 <div class="post">
