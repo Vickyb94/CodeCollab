@@ -5,7 +5,14 @@ const loggedIn = require('../../utils/loggedIn');
 
 router.get('/', async (req, res) => {
 
-  const postData = await Post.findByPk(1, { include: User }).then(post => console.log(post.user.userName))
+  const postData = await Post.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['userName']
+      }
+    ]
+  });
 
   // put postData into an array
   const allPosts = postData.map((post) => post.get({ plain: true }));
@@ -22,7 +29,7 @@ router.post('/', async (req, res) => {
       content: req.body.content,
       // imageLink: cloudinary.image(req.body.imageLink)
       imageLink: req.body.imageLink,
-      userId: req.session.id
+      userId: req.session.userId
     })
     console.log(newPost)
     res.status(200).json(newPost);
