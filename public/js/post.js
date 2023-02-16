@@ -1,7 +1,7 @@
 
 const postButton = () => {
   const form = document.querySelector('#postForm');
-  
+  console.log("Button pushed!");
   if (form.style.display === 'none') {
     form.style.display = 'block'
   } else {
