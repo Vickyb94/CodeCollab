@@ -1,6 +1,6 @@
 module.exports = {
-    formate_date: (date) => {
+    format_date: (date) => {
         //MM/DD/YYYY as date format
-        return date.tolaclDateString();
+        return date.toLocaleDateString();
     }
 };
