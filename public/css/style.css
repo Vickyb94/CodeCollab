@@ -11,14 +11,15 @@ text-indent: -999999px;
 }
 
 img {
-   width: 200px;
-   height: 200px;
+   width: 220px;
+   height: 180px;
+   margin-right: 40%;
 }
 
 body {
     height: 100vh;
     width: 100%;
-    background-color: #ecac62;
+    background-color: rgb(246,173,94);
     background-size: cover;
     background-position: top;
 }
