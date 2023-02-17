@@ -36,6 +36,7 @@ document
 // Submit the users post
 const submitPost = async (event) => {
   event.preventDefault();
+ 
 
   // grab the users text input
   const content = document.querySelector('#content').value.trim();
