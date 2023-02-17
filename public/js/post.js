@@ -13,5 +13,24 @@ const postButton = () => {
 };
 
 document
-.querySelector('#postBtn')
+.querySelector('#post-btn')
 .addEventListener('click', postButton);
+
+const submitPost = async (event) => {
+  event.preventDefault();
+
+  const content = document.querySelector('#content').value.trim();
+  const imageLink = document.querySelector('#picture').value.trim();
+  
+  if(content) {
+    const response = await fetch('/api/dashboard', {
+        method: 'POST',
+        body: JSON.stringify({ content, imageLink}),
+        headers: { 'Content-Type': 'application/json'},
+      });
+  }
+};
+
+document
+.querySelector('#submit-btn')
+.addEventListener('click', submitPost);
