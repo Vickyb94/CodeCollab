@@ -18,6 +18,7 @@ document
 
 const submitPost = async (event) => {
   event.preventDefault();
+ 
 
   const content = document.querySelector('#content').value.trim();
   const imageLink = document.querySelector('#picture').value.trim();

@@ -2,7 +2,7 @@ const loggedIn = require('../../utils/loggedIn');
 const cloudinary = require('cloudinary').v2;
 const router = require('express').Router();
 const { Post, User, Language } = require('../../models')
-
+let loggedInUser;
 router.get('/', async (req, res) => {
   await res.render('login')
 })
@@ -29,6 +29,8 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       // save the users id to the session for later use
       req.session.userId = userLogin.id;
+     console.log(req.session);
+     const loggedInUser = req.session.userId
     })
 
     // tell the user they have successfully logged in
@@ -39,4 +41,4 @@ router.post('/', async (req, res) => {
   }
 })
 
-module.exports = router;
+module.exports = router, loggedInUser ;
