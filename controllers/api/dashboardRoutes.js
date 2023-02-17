@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { Post, User, Language } = require('../../models')
 const loggedIn = require('../../utils/loggedIn');
 
+
 router.get('/', async (req, res) => {
 
   const postData = await Post.findAll({
