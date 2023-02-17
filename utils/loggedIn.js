@@ -5,7 +5,10 @@ const loggedIn = (req, res, next) => {
   // if status is true, next
   if (req.session.loggedIn) {next()}
   // if status is false, redirect user to login handlebar
-  else {res.redirect('/login')}
+  else {
+    console.log("You are not logged in!");
+    res.redirect('/login');
+  }
 }
 
 module.exports = loggedIn;

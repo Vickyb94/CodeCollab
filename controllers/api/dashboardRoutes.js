@@ -24,15 +24,13 @@ router.get('/', async (req, res) => {
 });
 
 // runs loggedIn middleware first, then posts
-router.post('/', async (req, res) => {
+router.post('/', loggedIn, async (req, res) => {
   try {
     const newPost = await Post.create({
       content: req.body.content,
-      // imageLink: cloudinary.image(req.body.imageLink)
       imageLink: req.body.imageLink,
       userId: req.session.userId
     })
-    console.log(newPost)
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);

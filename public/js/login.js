@@ -14,7 +14,7 @@ console.log("Running username/password");
         });
         //redirect browser to dashboard
         if (response.ok) {
-          document.location.replace('/api/dashboard');
+          document.location.replace('/dashboard');
           console.log("you are logged in");
         }
           else {
