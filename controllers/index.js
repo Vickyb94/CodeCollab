@@ -6,6 +6,7 @@ router.use('/api', apiRoutes);
 const { Post, User, Language } = require('../models')
 const loggedIn = require('../utils/loggedIn');
 
+
 router.get('/', async (req, res) => {
 
   const postData = await Post.findAll({
@@ -23,6 +24,12 @@ router.get('/', async (req, res) => {
   res.render('dashboard', {
     allPosts
   });
+});
+router.get('/logout', async (req,res)=> {
+  req.session.save(() => {
+    req.session.loggedIn = false;});
+res.render('dashboard',{})
+console.log(req.session.loggedIn);
 });
 
 router.get('/login', async (req, res) => {
