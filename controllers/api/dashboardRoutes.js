@@ -28,7 +28,7 @@ router.post('/', loggedIn, async (req, res) => {
   try {
     const newPost = await Post.create({
       content: req.body.content,
-      imageLink: req.body.imageLink,
+      imageLink: req.body.imageLink || '',
       userId: req.session.userId
     })
     res.status(200).json(newPost);
@@ -38,8 +38,3 @@ router.post('/', loggedIn, async (req, res) => {
 });
 
 module.exports = router;
-
-// example of functional cloudinary image upload
-// router.get('/', async (req, res) => {
-//   await res.send(cloudinary.image('https://res.cloudinary.com/dbzzfnp6n/image/upload/v1675990496/city-wallpaper_cnzndh.jpg'))
-// });

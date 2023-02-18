@@ -3,12 +3,12 @@ const cloudinary = require('cloudinary').v2;
 const router = require('express').Router();
 const { Post, User, Language } = require('../../models')
 let loggedInUser;
-router.get('/', async (req, res) => {
-  await res.render('login')
-})
+
+// router.get('/', async (req, res) => {
+//   await res.render('login')
+// })
 
 router.post('/', async (req, res) => {
-  console.log(req.body);
   try {
     // check to see if login credentials match the ones saved in the database
     const userLogin = await User.findOne({
@@ -29,8 +29,8 @@ router.post('/', async (req, res) => {
       req.session.loggedIn = true;
       // save the users id to the session for later use
       req.session.userId = userLogin.id;
-     console.log(req.session);
-     const loggedInUser = req.session.userId
+      console.log(req.session);
+      const loggedInUser = req.session.userId
     })
 
     // tell the user they have successfully logged in

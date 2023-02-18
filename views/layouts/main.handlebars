@@ -19,9 +19,8 @@
                   {{!-- Navbar to display options --}}
                <li><a href="/">Dashboard</a></li>
                <li><a href="/signup">Sign-up</a></li>
-              
                <li><a href="/login">Log-in</a></li>
-               <li><a href="/logout">Log-Out</a></li>
+               <li><a id='log-out' href="/logout">Log-Out</a></li>
               </ul> 
         </nav>
     </div>
@@ -39,5 +38,7 @@
   </footer>
  <!--Render logout if user is already logged in-->
 
+  {{!-- gives the logout button functionality --}}
+  <script src="/js/logout.js"></script>
 </body>
 </html>

@@ -28,19 +28,6 @@ router.get('/', async (req, res) => {
   });
 });
 
-// log the user out
-router.get('/logout', async (req,res)=> {
-  req.session.save(() => {
-  req.session.loggedIn = false;
-  });
-  console.log(req.session.loggedIn);
-  
-  // render dashboard again with allPosts
-  res.render('dashboard', {
-    allPosts
-  });
-});
-
 // get the login form
 router.get('/login', async (req, res) => {
   res.render('login', {});    
@@ -51,8 +38,13 @@ router.get(`/signup`, async (req,res) => {
   res.render(`signup`, {});
 });
 
+// get the logout form
+router.get(`/logout`, async (req,res) => {
+  res.render(`logout`, {});
+});
+
 // router.get(`/dashboard`, async (req,res) => {
 //   res.render(`dashboard`, {});
 // });    
 
-module.exports = router;
+module.exports = router, allPosts;

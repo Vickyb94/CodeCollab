@@ -3,25 +3,24 @@ const loginFormHandler = async function(event) {
     event.preventDefault();
 
     // collect username input and password input from login form
-     const username = document.querySelector("#email").value.trim();
-     const password = document.querySelector("#password").value.trim();
-console.log("Running username/password");
+    const username = document.querySelector("#email").value.trim();
+    const password = document.querySelector("#password").value.trim();
+    
     if (username && password) {
-        const response = await fetch('/api/login', {
+      const response = await fetch('/api/login', {
         method: 'POST',
         body: JSON.stringify({ username, password}),
         headers: { 'Content-Type': 'application/json'},
-        });
-        //redirect browser to dashboard
-        if (response.ok) {
-          document.location.replace('/');
-          console.log("you are logged in");
-        }
-          else {
-          alert('Login Failed! Please try again');
-        }
+      });
+      
+      //redirect browser to dashboard
+      if (response.ok) {
+        document.location.replace('/');
+        alert("Welcome back!");
+      } else {
+        alert('Login Failed! Please try again');
+      }
     }
-
 };
 
 document

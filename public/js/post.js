@@ -49,6 +49,7 @@ const submitPost = async (event) => {
       headers: { 'Content-Type': 'application/json'},
     });
   }
+  document.location.replace('/');
 };
 document
 .querySelector('#submit-btn')
