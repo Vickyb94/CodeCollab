@@ -8,7 +8,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 const path = require("path");
-const helpers = require('./utils/helpers');
+
 // loggedIn is the user authentication function
 const loggedIn = require('./utils/loggedIn');
 // gives handlebars access to loggedIn function

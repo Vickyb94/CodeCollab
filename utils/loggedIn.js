@@ -1,6 +1,6 @@
 
 // middleware function to check the loggedIn status of a user
-const loggedIn = (req, res, next) => {
+const loggedIn = async (req, res, next) => {
   console.log(`loggedIn middleware loggedIn status: ${req.session.loggedIn}`);
   
   // if status is true, next
@@ -8,7 +8,7 @@ const loggedIn = (req, res, next) => {
   // if status is false, redirect user to login handlebar
   else {
     console.log("You are not logged in!");
-    res.render('/login', {});
+    res.render('login', {});
   }
 }
 

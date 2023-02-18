@@ -10,15 +10,12 @@
 
 <div class="post">
     <div class="box">
-        {{!-- <div class="image"><img src="{{image source}}"></div> --}}
-             {{#each allPosts as |post|}}
-             <p>{{post.content}}</p>
-             {{#if post.imageLink}}
-             <img src={{post.imageLink}} alt="" style="">
-             {{/if}}
-             {{!--<p>{{username}} on {{format_date on date_created}} </p> --}}
-             {{/each}}
-           
+        {{#each allPosts as |post|}}
+        <p>{{post.content}}</p>
+        {{#if post.imageLink}}
+            <img src={{post.imageLink}} alt="" style="">
+        {{/if}}
+        {{/each}}
     </div>
 </div>
 
