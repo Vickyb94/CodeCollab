@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // import User for reference
-const User = require('./User');
+const User = require('./user');
 
 class Post extends Model {}
 
