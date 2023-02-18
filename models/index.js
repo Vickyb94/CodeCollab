@@ -1,5 +1,5 @@
 const User = require('./user');
-const Language = require('./language');
+const Language = require('./Language');
 const Post = require('./post');
 
 // associations 
