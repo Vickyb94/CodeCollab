@@ -2,7 +2,7 @@
 const router = require('express').Router();
 
 const dashboardRoutes = require('./dashboardRoutes');
-const signupRoutes = require('./SignupRoutes');
+const signupRoutes = require('./signupRoutes');
 const loginRoutes = require('./loginRoutes');
 const logoutRoutes = require('./logoutRoutes');
 
