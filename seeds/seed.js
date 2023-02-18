@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 // import seeder functions
 const seedPosts = require('../seeds/seedPosts');
-const seedLanguages = require('../seeds/seedlanguages');
+const seedLanguages = require('../seeds/seedLanguages');
 const seedUsers = require('../seeds/seedUsers');
 
 // run all seeds function
