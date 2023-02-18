@@ -8,7 +8,7 @@ router.post('/', async (req,res)=> {
     console.log(`After logout loggedIn status: ${req.session.loggedIn}`);
   });
   
-  // render dashboard again with allPosts
+  // render dashboard again
   res.render('dashboard');
 });
 

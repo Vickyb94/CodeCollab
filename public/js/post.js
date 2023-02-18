@@ -16,6 +16,38 @@ document
     myWidget.open();
   }, false);
 
+
+// Submit the users post
+const submitPost = async (event) => {
+  event.preventDefault();
+ 
+
+  // grab the users text input
+  const content = document.querySelector('#content').value.trim();
+
+  // if the user at least entered required content (imageLink is not required), send post request
+  if(content) {
+    if(!imageLink) {
+      const response = await fetch('/api/dashboard', {
+        method: 'POST',
+        body: JSON.stringify({ content }),
+        headers: { 'Content-Type': 'application/json'},
+      });
+    } else {
+      const response = await fetch('/api/dashboard', {
+        method: 'POST',
+        body: JSON.stringify({ content, imageLink }),
+        headers: { 'Content-Type': 'application/json'},
+      });
+    }
+  }
+  document.location.replace('/');
+};
+document
+.querySelector('#submit-btn')
+.addEventListener('click', submitPost);
+
+
 // Toggle display for the post input form and submit button
 const postButton = () => {
   const form = document.querySelector('#postForm');
@@ -32,25 +64,3 @@ const postButton = () => {
 document
 .querySelector('#post-btn')
 .addEventListener('click', postButton);
-
-// Submit the users post
-const submitPost = async (event) => {
-  event.preventDefault();
- 
-
-  // grab the users text input
-  const content = document.querySelector('#content').value.trim();
-
-  // if the user at least entered required content (imageLink is not required), send post request
-  if(content) {
-    const response = await fetch('/api/dashboard', {
-      method: 'POST',
-      body: JSON.stringify({ content, imageLink }),
-      headers: { 'Content-Type': 'application/json'},
-    });
-  }
-  document.location.replace('/');
-};
-document
-.querySelector('#submit-btn')
-.addEventListener('click', submitPost);

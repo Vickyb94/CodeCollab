@@ -28,7 +28,7 @@ router.post('/', loggedIn, async (req, res) => {
   try {
     const newPost = await Post.create({
       content: req.body.content,
-      imageLink: req.body.imageLink || '',
+      imageLink: req.body.imageLink || null,
       userId: req.session.userId
     })
     res.status(200).json(newPost);
