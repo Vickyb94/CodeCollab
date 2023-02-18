@@ -1,6 +1,6 @@
-const User = require('./User');
-const Language = require('./Language');
-const Post = require('./Post');
+const User = require('./user');
+const Language = require('./language');
+const Post = require('./post');
 
 // associations 
 User.hasMany(Post, {
