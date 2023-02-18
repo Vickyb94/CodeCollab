@@ -7,6 +7,7 @@ const { Post, User, Language } = require('../models')
 const loggedIn = require('../utils/loggedIn');
 
 // get the posts for the dashboard
+let allPosts;
 router.get('/', async (req, res) => {
 
   const postData = await Post.findAll({
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
   });
 
   // put postData into an array
-  const allPosts = postData.map((post) => post.get({ plain: true }));
+  allPosts = postData.map((post) => post.get({ plain: true }));
 
   // render dashboard with allPosts
   res.render('dashboard', {
@@ -46,4 +47,4 @@ router.get(`/logout`, async (req,res) => {
 //   res.render(`dashboard`, {});
 // });    
 
-module.exports = { router };
+module.exports = router, allPosts;
