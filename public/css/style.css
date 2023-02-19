@@ -50,24 +50,32 @@ nav{
     padding-right: 8%;
 }
 
-nav ul li{
+ul {
     list-style-type: none;
-    display: inline-block;
-    padding: 15px 30px;
-}
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    padding: 8px;
+  }
+
 nav ul li a{
     color: black;
     text-decoration: none;
-    font-size: 150%;
+    font-size: 130%;
+
 }
 nav ul li a:hover{
     color:blanchedalmond;
     transition: .4s;
 }
-
-/*header {
-    margin-top: 50px;
-}*/
   
 input {
     width: 100%;
@@ -183,3 +191,10 @@ p {
     border-radius: 20px;
     margin-top: 10%;
 }
+
+/*.post {
+    margin: 0 0 20px 0;
+    border: 3px solid black;
+    border-radius: 15%;
+    background: #e2d3c1;
+  }*/
