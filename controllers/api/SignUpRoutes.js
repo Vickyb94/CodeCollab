@@ -1,6 +1,7 @@
 const { User }= require(`../../models`);
 const router = require('express').Router();
 const loggedIn = require('../../utils/loggedIn');
+const bcrypt = require('bcrypt');
 
 
 router.post('/', async (req, res) => {
@@ -8,8 +9,9 @@ router.post('/', async (req, res) => {
     const newUser = await User.create({
       userName: req.body.username,
       userEmail: req.body.email,
-      userPassword: req.body.password,
+      userPassword: await bcrypt.hash(req.body.password, 13),
     });
+
     await req.session.save(() => {
       // sets logged_in session status to true
       console.log('UPDATE SESSION ON SIGNUP');
