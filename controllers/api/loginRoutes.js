@@ -8,22 +8,24 @@ let loggedInUser;
 
 router.post('/', async (req, res) => {
   try {
+    console.log('GIVEN PASSWORD');
+    console.log(req.body.password);
     // select the user with the associated email
-    let hashedPassword = await User.findOne({
+    let user = await User.findOne({
       where: {
         userEmail: req.body.email
       }
     });
     
     // get the hashedPassword of the user
-    hashedPassword = hashedPassword.dataValues.userPassword
+    hashedPassword = user.dataValues.userPassword;
+    console.log('HASHED PASSWORD');
+    console.log(hashedPassword);
 
-    // now find the user where the given password matches the the hashedPassword
-    const userLogin = await User.findOne({
-      where: {
-        userPassword: await bcrypt.compare(hashedPassword, req.body.password)
-      }
-    })
+    // now compare the given password with the hashedPassword
+    const userLogin = await bcrypt.compare(req.body.password, hashedPassword);
+    console.log('USERLOGIN');
+    console.log(userLogin);
 
     // run logic for successfull/unsuccessfull login
     if (!userLogin) {
