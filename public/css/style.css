@@ -70,6 +70,7 @@ nav ul li a{
     color: black;
     text-decoration: none;
     font-size: 130%;
+    font-weight: 500;
 
 }
 nav ul li a:hover{
@@ -192,9 +193,27 @@ p {
     margin-top: 10%;
 }
 
-/*.post {
-    margin: 0 0 20px 0;
-    border: 3px solid black;
-    border-radius: 15%;
-    background: #e2d3c1;
-  }*/
+.box {
+    border: 2px solid black;
+    background: #fff;
+    margin-top: 2%;
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  .img {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 2%; 
+    background: rgb(216, 224, 245);
+  }
+  
+  h3 {
+    font-size: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    margin: 4px;
+    
+}
