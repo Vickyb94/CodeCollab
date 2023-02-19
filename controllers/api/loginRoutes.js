@@ -2,19 +2,32 @@ const loggedIn = require('../../utils/loggedIn');
 const cloudinary = require('cloudinary').v2;
 const router = require('express').Router();
 const { Post, User, Language } = require('../../models')
+const bcrypt = require('bcrypt');
 let loggedInUser;
 
 
 router.post('/', async (req, res) => {
   try {
-    // check to see if login credentials match the ones saved in the database
-    const userLogin = await User.findOne({
+    console.log('GIVEN PASSWORD');
+    console.log(req.body.password);
+    // select the user with the associated email
+    let user = await User.findOne({
       where: {
-        userEmail: req.body.username,
-        userPassword: req.body.password
+        userEmail: req.body.email
       }
-    })
+    });
+    
+    // get the hashedPassword of the user
+    hashedPassword = user.dataValues.userPassword;
+    console.log('HASHED PASSWORD');
+    console.log(hashedPassword);
 
+    // now compare the given password with the hashedPassword
+    const userLogin = await bcrypt.compare(req.body.password, hashedPassword);
+    console.log('USERLOGIN');
+    console.log(userLogin);
+
+    // run logic for successfull/unsuccessfull login
     if (!userLogin) {
       // tell the user their input was invalid without being too specific
       res.status(400).json('Incorrect Email or Password, please try again.');
@@ -32,7 +45,8 @@ router.post('/', async (req, res) => {
         res.status(200).json(`Welcome back ${userLogin.userName}!`);
       })
     }
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(400).json(err);
   }
 })

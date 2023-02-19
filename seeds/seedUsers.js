@@ -5,8 +5,23 @@ const userData = [
     {
         userName: "John Doe",
         userEmail: "johndoe@email.com",
-        userPassword: "Password1234"
-    }
+        userPassword: "John"
+    },
+    {
+        userName: "James Bond",
+        userEmail: "jamesbond@email.com",
+        userPassword: "James"
+    },
+    {
+        userName: "Ben Smith",
+        userEmail: "bensmith@email.com",
+        userPassword: "Ben"
+    },
+    {
+        userName: "Hannah Smith",
+        userEmail: "hannahsmith@email.com",
+        userPassword: "Hannah"
+    },
 ]
 
 const seedUsers = () => {

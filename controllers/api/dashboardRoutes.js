@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
 
   // put postData into an array
   const allPosts = postData.map((post) => post.get({ plain: true }));
+  console.log(allPosts)
 
   res.render('dashboard', {
     allPosts
