@@ -37,8 +37,8 @@ router.post('/', async (req, res) => {
         // set the loggedIn session status of the user to true
         req.session.loggedIn = true;
         // save the users id to the session for later use
-        req.session.userId = userLogin.id;
-        const loggedInUser = req.session.userId
+        req.session.userId = user.id;
+        console.log(req.session);
 
         console.log(`loggedIn status after login: ${req.session.loggedIn}`);
         // tell the user they have successfully logged in
