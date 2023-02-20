@@ -10,10 +10,15 @@
 text-indent: -999999px;
 }
 
+.logoimg {
+width: 440px;
+height: 360px;
+margin-right:40%
+}
+
 img {
    width: 600px;
    height: 450px;
-   
 }
 
 body {
@@ -198,7 +203,7 @@ p {
     width: 70%;
     margin-left: 15%;
   }
- 
+
   .img {
     border: 1px solid black;
     border-radius: 4px;
@@ -206,11 +211,9 @@ p {
     margin-top: 3%; 
     background: rgb(216, 224, 245);
     margin-bottom: 3%;
-    display: flex;
+    display:flex;
     justify-content: center;
-   
   }
-
   
   h3 {
     font-size: 100%;
