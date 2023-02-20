@@ -17,7 +17,7 @@ const logoutHandler = async (choice) => {
             document.location.replace('/');
         }
     } else {
-        alert("no");
+        // alert("no");
         document.location.replace('/');
     }
 };
