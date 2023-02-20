@@ -4,14 +4,17 @@
 
 <form id="postForm" style="display: none">
     <input type="text" placeholder="Share something!" id="content" name="post content" required>
-    <button id="upload_widget" class="cloudinary-button">Upload Image</button>
+    <div id="form-buttons">
+        <button id="upload_widget" class="cloudinary-button">Upload Image</button>
     <button id="submit-btn">Post</button>
+    </div>
 </form>
 
 <article class="box">
    <div class="post">
         {{#each allPosts as |post|}}
         <h3>{{post.content}}</h3>
+            {{!-- if an imageLink was provided in the post render this div --}}
             {{#if post.imageLink}}
                 <div class="img">
                     <img src={{post.imageLink}} alt="" style="">
