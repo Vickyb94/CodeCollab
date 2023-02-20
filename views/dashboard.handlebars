@@ -12,11 +12,11 @@
    <div class="post">
         {{#each allPosts as |post|}}
         <h3>{{post.content}}</h3>
-        <div class="img">
             {{#if post.imageLink}}
-            <img src={{post.imageLink}} alt="" style="">
-        </div>
-        {{/if}}
+                <div class="img">
+                    <img src={{post.imageLink}} alt="" style="">
+                </div>
+            {{/if}}
         {{/each}}
     
   </div>
