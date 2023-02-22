@@ -28,9 +28,8 @@ https://code-collab.herokuapp.com/
 
 ## Usage:
 
-<!-- keeping these empty for now, once project is finished we can add screenshots of the completed code and the deployed application here -->
-![""](/images/)
-![""](/images/)
+Github Repository: https://github.com/Vickyb94/CodeCollab
+![alt text](asset/Screenshot%202023-02-21%20200523.png)
 
 
 ## Credits:
